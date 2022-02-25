@@ -11,6 +11,9 @@
 		BCB8835927C4977600533E48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8835827C4977600533E48 /* ContentView.swift */; };
 		BCB8835B27C4977800533E48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB8835A27C4977800533E48 /* Assets.xcassets */; };
 		BCB8835E27C4977800533E48 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB8835D27C4977800533E48 /* Preview Assets.xcassets */; };
+		BCB8836827C8A54100533E48 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8836727C8A54100533E48 /* Group.swift */; };
+		BCB8836A27C8A84200533E48 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8836927C8A84200533E48 /* Team.swift */; };
+		BCB8836C27C8A87000533E48 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8836B27C8A87000533E48 /* Sticker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		BCB8835827C4977600533E48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BCB8835A27C4977800533E48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCB8835D27C4977800533E48 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BCB8836727C8A54100533E48 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		BCB8836927C8A84200533E48 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		BCB8836B27C8A87000533E48 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 		BCB8836427C4982A00533E48 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BCB8836727C8A54100533E48 /* Group.swift */,
+				BCB8836927C8A84200533E48 /* Team.swift */,
+				BCB8836B27C8A87000533E48 /* Sticker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,8 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCB8836A27C8A84200533E48 /* Team.swift in Sources */,
+				BCB8836827C8A54100533E48 /* Group.swift in Sources */,
 				BCB8835927C4977600533E48 /* ContentView.swift in Sources */,
 				BCB8835727C4977600533E48 /* World_Cup_CollectiblesApp.swift in Sources */,
+				BCB8836C27C8A87000533E48 /* Sticker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
