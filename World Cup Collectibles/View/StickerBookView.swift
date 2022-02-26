@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AlbumView: View {
+struct StickerBookView: View {
     var body: some View {
         
         VStack(alignment: .leading){
@@ -24,9 +24,9 @@ struct AlbumView: View {
     }
 }
 
-struct AlbumView_Previews: PreviewProvider {
+struct StickerBookView_Previews: PreviewProvider {
     static var previews: some View {
-        AlbumView()
+        StickerBookView()
     }
 }
 

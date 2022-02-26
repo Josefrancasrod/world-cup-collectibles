@@ -15,7 +15,7 @@
 		BCB8836A27C8A84200533E48 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8836927C8A84200533E48 /* Team.swift */; };
 		BCB8836C27C8A87000533E48 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8836B27C8A87000533E48 /* Sticker.swift */; };
 		BCB8837027C9D5F900533E48 /* InterchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8836F27C9D5F900533E48 /* InterchangeView.swift */; };
-		BCB8837227C9E32A00533E48 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8837127C9E32A00533E48 /* AlbumView.swift */; };
+		BCB8837227C9E32A00533E48 /* StickerBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8837127C9E32A00533E48 /* StickerBookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 		BCB8836927C8A84200533E48 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		BCB8836B27C8A87000533E48 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
 		BCB8836F27C9D5F900533E48 /* InterchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterchangeView.swift; sourceTree = "<group>"; };
-		BCB8837127C9E32A00533E48 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
+		BCB8837127C9E32A00533E48 /* StickerBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +94,7 @@
 			children = (
 				BCB8835827C4977600533E48 /* ContentView.swift */,
 				BCB8836F27C9D5F900533E48 /* InterchangeView.swift */,
-				BCB8837127C9E32A00533E48 /* AlbumView.swift */,
+				BCB8837127C9E32A00533E48 /* StickerBookView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 				BCB8836A27C8A84200533E48 /* Team.swift in Sources */,
 				BCB8836827C8A54100533E48 /* Group.swift in Sources */,
 				BCB8835927C4977600533E48 /* ContentView.swift in Sources */,
-				BCB8837227C9E32A00533E48 /* AlbumView.swift in Sources */,
+				BCB8837227C9E32A00533E48 /* StickerBookView.swift in Sources */,
 				BCB8837027C9D5F900533E48 /* InterchangeView.swift in Sources */,
 				BCB8835727C4977600533E48 /* World_Cup_CollectiblesApp.swift in Sources */,
 				BCB8836C27C8A87000533E48 /* Sticker.swift in Sources */,
