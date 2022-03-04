@@ -11,7 +11,7 @@ import SwiftUI
 struct World_Cup_CollectiblesApp: App {
     var body: some Scene {
         WindowGroup {
-            StickerBookView()
+            ContentView()
         }
     }
 }
