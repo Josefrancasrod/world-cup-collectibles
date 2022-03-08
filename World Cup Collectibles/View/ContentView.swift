@@ -59,14 +59,20 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct SwipeNavigation: View{
+    
+    
+    let screenData = [
+        Group(id: "1",name: "Specials",teams: []),
+        Group(id: "2",name: "Specials",teams: []),
+        Group(id: "3",name: "Specials",teams: [])
+    ]
+    @State public var selectedTab = 0
+    
     var body: some View{
-        TabView {
-            SectionView()
-            SectionView()
-            SectionView()
-            Text("Second")
-            Text("Third")
-            Text("Fourth")
+        TabView(selection: $selectedTab) {
+            ForEach(screenData, id: \.id) { tabItem in
+                SectionView(id: tabItem.id)
+            }
         }.tabViewStyle(.page).indexViewStyle(.page(backgroundDisplayMode: .always))
     }
 }

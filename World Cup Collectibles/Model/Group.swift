@@ -9,6 +9,6 @@ import Foundation
 
 struct Group{
     var id: String
-    var Name: String
-    var Teams: [Team]
+    var name: String
+    var teams: [Team]
 }
