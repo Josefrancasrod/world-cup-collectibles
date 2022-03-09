@@ -11,6 +11,10 @@ struct ContentView: View {
     @State private var isInTheStickerbookView = false
     @State private var isInTheInterchangekView = false
     
+    
+    @State public var selectedTab = 0
+    @State var selectedPage = 0
+    
     var body: some View {
         /*
         TabView{
@@ -27,7 +31,11 @@ struct ContentView: View {
          */
         
         ZStack(alignment: .bottom){
-            SwipeNavigation()
+            TabView(selection: $selectedPage) {
+                ForEach(1...34, id: \.self) { index in
+                    SectionView(id: String(index))
+                }
+            }.tabViewStyle(.page).indexViewStyle(.page(backgroundDisplayMode: .always))
             HStack{
                 Button(action: {
                     isInTheInterchangekView.toggle();
@@ -42,7 +50,7 @@ struct ContentView: View {
                 }, label: {
                     Image(systemName: "circle.fill").resizable().scaledToFit().frame(width: 25, height: 25, alignment: .center)
                 }).sheet(isPresented: $isInTheStickerbookView) {
-                    StickerBookView()
+                    StickerBookView(selectedPage: $selectedPage)
                 }
             }.padding(.bottom, 15).padding(.horizontal, 30)
         }
@@ -70,8 +78,8 @@ struct SwipeNavigation: View{
     
     var body: some View{
         TabView(selection: $selectedTab) {
-            ForEach(screenData, id: \.id) { tabItem in
-                SectionView(id: tabItem.id)
+            ForEach(0...34, id: \.self) { index in
+                SectionView(id: String(index))
             }
         }.tabViewStyle(.page).indexViewStyle(.page(backgroundDisplayMode: .always))
     }
