@@ -66,7 +66,9 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct SwipeNavigation: View{
+//-- ITS BETTER IF THIS PART COULD BE MODULAR, BUT AT THE MOMENT
+//-- IT WILL BE IN THE CONTENTVIEW ZSTACK
+/**struct SwipeNavigation: View{
     
     
     let screenData = [
@@ -84,3 +86,4 @@ struct SwipeNavigation: View{
         }.tabViewStyle(.page).indexViewStyle(.page(backgroundDisplayMode: .always))
     }
 }
+ */
