@@ -12,25 +12,7 @@ struct InterchangeView: View {
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible())]
     
     @State private var allTheStickers: Sticker = Sticker(iHaveIt: [Bool](repeating: false, count: 300))
-   
-    /*
-    init(){
-        // Read/Get Data
-        if let data = UserDefaults.standard.data(forKey: "stickerAlbum") {
-            do {
-                    let decoder = JSONDecoder()
-                    let stickers = try decoder.decode(Sticker.self, from: data)
-                    allTheStickers = stickers
-                } catch {
-                    print("Unable to Decode Note (\(error))")
-                }
-            
-        }
-    }
-     */
-    
 
-    
     var body: some View {
         ScrollView{
             LazyVGrid(columns: gridItemLayout, spacing: 20) {
@@ -49,7 +31,6 @@ struct InterchangeView: View {
                                 print("Unable to Encode the sticker album (\(error))")
                             }
                             
-                            //print(allTheStickers.iHaveIt[index])
 
                         }, label: {
                             Text(String(index)).foregroundColor(Color.white).frame(height: 50)

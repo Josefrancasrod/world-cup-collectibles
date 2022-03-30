@@ -20,19 +20,7 @@ struct ContentView: View {
     
     
     var body: some View {
-        /*
-        TabView{
-            InterchangeView().tabItem{
-                Image(systemName: "apps.ipad")
-            }
-            SwipeNavigation().tabItem{
-                Image(systemName: "apps.ipad")
-            }
-            Text("Hello").tabItem{
-                Image(systemName: "house.fill")
-            }
-        }
-         */
+
         
         ZStack(alignment: .bottom){
             TabView(selection: $selectedPage) {
