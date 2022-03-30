@@ -7,8 +7,13 @@
 
 import Foundation
 
-struct Team{
+struct Team: Codable{
     var id: Int
     var name: String
-    var Stickers: [Sticker]
+    var sectionStart: Int
+    var sectionFinish: Int
+}
+
+struct TeamData: Codable{
+    var team: [Team]
 }

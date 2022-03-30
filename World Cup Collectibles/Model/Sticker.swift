@@ -7,7 +7,6 @@
 
 import Foundation
 
-struct Sticker{
-    var id: Int
-    var iHaveIt: Bool
+struct Sticker: Codable{
+    var iHaveIt: [Bool]
 }
