@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC74471527E0418B00D2748A /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74471427E0418B00D2748A /* SaveData.swift */; };
 		BCB8835727C4977600533E48 /* World_Cup_CollectiblesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8835627C4977600533E48 /* World_Cup_CollectiblesApp.swift */; };
 		BCB8835927C4977600533E48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB8835827C4977600533E48 /* ContentView.swift */; };
 		BCB8835B27C4977800533E48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB8835A27C4977800533E48 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC74471427E0418B00D2748A /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		BCB8835327C4977600533E48 /* World Cup Collectibles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World Cup Collectibles.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB8835627C4977600533E48 /* World_Cup_CollectiblesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World_Cup_CollectiblesApp.swift; sourceTree = "<group>"; };
 		BCB8835827C4977600533E48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		BCB8836627C4984100533E48 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BC74471427E0418B00D2748A /* SaveData.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				BCB8837227C9E32A00533E48 /* StickerBookView.swift in Sources */,
 				BCB902A527D1BAC100231353 /* SectionView.swift in Sources */,
 				BCB8837027C9D5F900533E48 /* InterchangeView.swift in Sources */,
+				BC74471527E0418B00D2748A /* SaveData.swift in Sources */,
 				BCB8835727C4977600533E48 /* World_Cup_CollectiblesApp.swift in Sources */,
 				BCB8836C27C8A87000533E48 /* Sticker.swift in Sources */,
 			);
