@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var allTheTeams: TeamData = TeamData(team: [Team](repeating: Team(id: 0, name: "Test", sectionStart: 0, sectionFinish: 10), count: 30))
+    @State private var allTheTeams: TeamData = getteams()
     @State private var isInTheStickerbookView = false
     @State private var isInTheInterchangekView = false
     @Environment(\.colorScheme) var colorScheme
@@ -68,7 +68,7 @@ struct ContentView: View {
                 }).sheet(isPresented: $isInTheStickerbookView) {
                     StickerBookView(selectedPage: $selectedPage)
                 }
-            }.padding(.bottom, 15).padding(.horizontal, 30).onAppear{
+            }.padding(.bottom, 15).padding(.horizontal, 30)/*.onAppear{
                 
                 if let data = UserDefaults.standard.data(forKey: "teamsData") {
                     do {
@@ -80,10 +80,25 @@ struct ContentView: View {
                     }
                 }
                 
-            }
+            }*/
         }
         
     }
+}
+
+func getteams() -> TeamData{
+    var allTheTeams: TeamData = TeamData(team: [Team](repeating: Team(id: 0, name: "Test", sectionStart: 0, sectionFinish: 10), count: 30))
+    
+    if let data = UserDefaults.standard.data(forKey: "teamsData") {
+        do {
+            let decoder = JSONDecoder()
+            let teamsData = try decoder.decode(TeamData.self, from: data)
+            allTheTeams = teamsData
+        } catch {
+            print("Unable to Decode Note (\(error))")
+        }
+    }
+    return allTheTeams
 }
 
 

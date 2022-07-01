@@ -11,7 +11,7 @@ struct InterchangeView: View {
     
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible())]
     
-    @State private var allTheStickers: Sticker = Sticker(iHaveIt: [Bool](repeating: false, count: 680))
+    @State private var allTheStickers: Sticker = getstickersInterchange()
     @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
@@ -27,15 +27,7 @@ struct InterchangeView: View {
                         Button(action: {
                             self.allTheStickers.iHaveIt[index] = !allTheStickers.iHaveIt[index]
                             
-                            do {
-                                let encoder = JSONEncoder()
-                                let data = try encoder.encode(allTheStickers)
-                                UserDefaults.standard.set(data, forKey: "stickerAlbum")
-
-                            } catch {
-                                print("Unable to Encode the sticker album (\(error))")
-                            }
-                            
+                            savestickersInterchange(allTheStickers: allTheStickers)
 
                         }, label: {
                             Text(String(index)).foregroundColor(Color.white).frame(height: 50)
@@ -43,7 +35,7 @@ struct InterchangeView: View {
                     }
 
             }.padding(.horizontal, 30)
-        }.onAppear{
+        }/*.onAppear{
            
                 if let data = UserDefaults.standard.data(forKey: "stickerAlbum") {
                     do {
@@ -55,7 +47,34 @@ struct InterchangeView: View {
                         }
                 }
     
+        }*/
+    }
+}
+
+func getstickersInterchange() -> Sticker{
+    var allTheStickers: Sticker = Sticker(iHaveIt: [Bool](repeating: false, count:10));
+    
+    if let data = UserDefaults.standard.data(forKey: "stickerAlbum") {
+        do {
+            let decoder = JSONDecoder()
+            let stickers = try decoder.decode(Sticker.self, from: data)
+            allTheStickers = stickers
+        } catch {
+            print("Unable to Decode Note (\(error))")
         }
+    }
+    
+    return allTheStickers
+}
+
+func savestickersInterchange(allTheStickers: Sticker){
+    do {
+        let encoder = JSONEncoder()
+        let data = try encoder.encode(allTheStickers)
+        UserDefaults.standard.set(data, forKey: "stickerAlbum")
+
+    } catch {
+        print("Unable to Encode the sticker album (\(error))")
     }
 }
 

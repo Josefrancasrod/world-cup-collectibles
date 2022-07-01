@@ -11,7 +11,7 @@ struct StickerBookView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.colorScheme) var colorScheme
-    @State private var allTheTeams: TeamData = TeamData(team: [Team](repeating: Team(id: 0, name: "Test", sectionStart: 0, sectionFinish: 10), count: 30))
+    @State private var allTheTeams: TeamData = getallteams()
     
     
     var onDismiss: ((_ model: Int) -> Void)?
@@ -44,7 +44,7 @@ struct StickerBookView: View {
                 }
                 
             }
-        }.padding(.bottom, 5).padding(.horizontal, 30).onAppear{
+        }.padding(.bottom, 5).padding(.horizontal, 30)/*.onAppear{
             
             if let data = UserDefaults.standard.data(forKey: "teamsData") {
                 do {
@@ -56,7 +56,7 @@ struct StickerBookView: View {
                     }
             }
 
-        }
+        }*/
     }
 }
 
@@ -64,6 +64,22 @@ struct StickerBookView_Previews: PreviewProvider {
     static var previews: some View {
         StickerBookView(selectedPage: .constant(0))
     }
+}
+
+func getallteams() -> TeamData{
+    var allTheTeams: TeamData = TeamData(team: [Team](repeating: Team(id: 0, name: "Test", sectionStart: 0, sectionFinish: 10), count: 30))
+    
+    if let data = UserDefaults.standard.data(forKey: "teamsData") {
+        do {
+                let decoder = JSONDecoder()
+                let teamsData = try decoder.decode(TeamData.self, from: data)
+                allTheTeams = teamsData
+            } catch {
+                print("Unable to Decode Note (\(error))")
+            }
+    }
+    
+    return allTheTeams
 }
 
 struct Card:View{

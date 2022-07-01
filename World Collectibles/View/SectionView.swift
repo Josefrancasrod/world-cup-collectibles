@@ -9,13 +9,14 @@ import SwiftUI
 
 struct SectionView: View {
     var team: Team
+    let data:SaveData = SaveData()
     
     init(team: Team){
         self.team = team
     }
 
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-    @State private var allTheStickers: Sticker = Sticker(iHaveIt: [Bool](repeating: false, count: 681))
+    @State private var allTheStickers: Sticker = getstickers()
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -25,6 +26,7 @@ struct SectionView: View {
             HStack{
                 Text("\(team.name)").font(.title).fontWeight(.bold).foregroundColor(colorScheme == .dark ? Color("QatarWhite") :  Color("Qatar")).frame(alignment: Alignment.leading).padding(.vertical, 20).padding(.leading, 30)
                 Spacer()
+                Text("\(data.teamsEmojis[team.name]! )").font(.title).fontWeight(.bold).padding(.trailing, 30)
             }
             
                     LazyVGrid(columns: gridItemLayout, spacing: 20) {
@@ -32,20 +34,13 @@ struct SectionView: View {
                             Button(action: {
                                 self.allTheStickers.iHaveIt[index] = !allTheStickers.iHaveIt[index]
                                 
-                                do {
-                                    let encoder = JSONEncoder()
-                                    let data = try encoder.encode(allTheStickers)
-                                    UserDefaults.standard.set(data, forKey: "stickerAlbum")
-
-                                } catch {
-                                    print("Unable to Encode the sticker album (\(error))")
-                                }
+                                savestickers(allTheStickers: allTheStickers)
                             }, label: {
                                 Text(String(index)).foregroundColor(Color.white).frame(height: 70).frame(minWidth: 0,maxWidth: .infinity, maxHeight: 70,   alignment: .center ).background(allTheStickers.iHaveIt[index] ? Color("Qatar") : Color("Blue")).cornerRadius(5)
                             })
                         }
                     }.padding(.horizontal, 30)
-        }.onAppear{
+        }/*.onAppear{
             if let data = UserDefaults.standard.data(forKey: "stickerAlbum") {
                 do {
                     let decoder = JSONDecoder()
@@ -55,11 +50,38 @@ struct SectionView: View {
                     print("Unable to Decode Note (\(error))")
                 }
             }
-    }
+    }*/
         }
         
     }
 }
+func getstickers() -> Sticker{
+    var allTheStickers: Sticker = Sticker(iHaveIt: [Bool](repeating: false, count:10));
+    
+    if let data = UserDefaults.standard.data(forKey: "stickerAlbum") {
+        do {
+            let decoder = JSONDecoder()
+            let stickers = try decoder.decode(Sticker.self, from: data)
+            allTheStickers = stickers
+        } catch {
+            print("Unable to Decode Note (\(error))")
+        }
+    }
+    
+    return allTheStickers
+}
+
+func savestickers(allTheStickers: Sticker){
+    do {
+        let encoder = JSONEncoder()
+        let data = try encoder.encode(allTheStickers)
+        UserDefaults.standard.set(data, forKey: "stickerAlbum")
+
+    } catch {
+        print("Unable to Encode the sticker album (\(error))")
+    }
+}
+
 
 struct SectionView_Previews: PreviewProvider {
     static var previews: some View {
