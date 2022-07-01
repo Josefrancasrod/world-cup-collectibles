@@ -34,7 +34,7 @@ struct World_CollectiblesApp: App {
             Team(id: 0, name: "Specials", sectionStart: 0, sectionFinish: 6),
             Team(id: 1, name: "Stadiums", sectionStart: 7, sectionFinish: 18),
             Team(id: 2, name: "Posters", sectionStart: 19, sectionFinish: 30),
-            Team(id: 3, name: "Posters", sectionStart: 31, sectionFinish: 50),
+            Team(id: 3, name: "Qatar", sectionStart: 31, sectionFinish: 50),
             Team(id: 4, name: "Ecuador", sectionStart: 51, sectionFinish: 70),
             Team(id: 5, name: "Senegal", sectionStart: 71, sectionFinish: 90),
             Team(id: 6, name: "Netherlands", sectionStart: 91, sectionFinish: 110),
